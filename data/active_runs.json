@@ -1,0 +1,1384 @@
+{
+    "run_1780755595": {
+        "run_id": "run_1780755595",
+        "runbook_title": "High CPU Usage",
+        "user": "developer",
+        "current_step_idx": 2,
+        "step_name": "Restart service",
+        "command": "systemctl restart nginx",
+        "results": [
+            {
+                "step": "Check CPU utilization",
+                "command": "top",
+                "status": "FAILED",
+                "output": "'top' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Find top resource-consuming process",
+                "command": "ps aux --sort=-%cpu | head",
+                "status": "FAILED",
+                "output": "'ps' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 255
+            }
+        ],
+        "steps": [
+            "Check CPU utilization",
+            "Find top resource-consuming process",
+            "Restart service"
+        ],
+        "commands": {
+            "Check CPU utilization": "top",
+            "Find top resource-consuming process": "ps aux --sort=-%cpu | head",
+            "Restart service": "systemctl restart nginx"
+        },
+        "timeline": [
+            "19:49 Login",
+            "19:49 Execute Runbook",
+            "19:49 Check CPU utilization FAILED",
+            "19:49 Find top resource-consuming process FAILED",
+            "19:49 Restart service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780755655": {
+        "run_id": "run_1780755655",
+        "runbook_title": "Nginx Service Recovery Runbook",
+        "user": "developer",
+        "current_step_idx": 4,
+        "step_name": "Restart Nginx service",
+        "command": "echo nginx restarted successfully",
+        "results": [
+            {
+                "step": "Check disk space",
+                "command": "df -h",
+                "status": "FAILED",
+                "output": "'df' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Check memory usage",
+                "command": "free -m",
+                "status": "FAILED",
+                "output": "'free' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Check current Nginx status",
+                "command": "echo nginx status: active (running)",
+                "status": "SUCCESS",
+                "output": "nginx status: active (running)",
+                "returncode": 0
+            },
+            {
+                "step": "Review recent Nginx logs",
+                "command": "echo log: no critical errors found",
+                "status": "SUCCESS",
+                "output": "log: no critical errors found",
+                "returncode": 0
+            }
+        ],
+        "steps": [
+            "Check disk space",
+            "Check memory usage",
+            "Check current Nginx status",
+            "Review recent Nginx logs",
+            "Restart Nginx service",
+            "Verify Nginx service status",
+            "Verify application health endpoint"
+        ],
+        "commands": {
+            "Check disk space": "df -h",
+            "Check memory usage": "free -m",
+            "Check current Nginx status": "echo nginx status: active (running)",
+            "Review recent Nginx logs": "echo log: no critical errors found",
+            "Restart Nginx service": "echo nginx restarted successfully",
+            "Verify Nginx service status": "echo nginx status: active (running)",
+            "Verify application health endpoint": "echo HTTP 200 OK - application healthy"
+        },
+        "timeline": [
+            "19:50 Login",
+            "19:50 Execute Runbook",
+            "19:50 Check disk space FAILED",
+            "19:50 Check memory usage FAILED",
+            "19:50 Check current Nginx status SUCCESS",
+            "19:50 Review recent Nginx logs SUCCESS",
+            "19:50 Restart Nginx service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780756020": {
+        "run_id": "run_1780756020",
+        "runbook_title": "Nginx Service Recovery Runbook",
+        "user": "developer",
+        "current_step_idx": 4,
+        "step_name": "Restart Nginx service",
+        "command": "echo nginx restarted successfully",
+        "results": [
+            {
+                "step": "Check disk space",
+                "command": "df -h",
+                "status": "FAILED",
+                "output": "'df' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Check memory usage",
+                "command": "free -m",
+                "status": "FAILED",
+                "output": "'free' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Check current Nginx status",
+                "command": "echo nginx status: active (running)",
+                "status": "SUCCESS",
+                "output": "nginx status: active (running)",
+                "returncode": 0
+            },
+            {
+                "step": "Review recent Nginx logs",
+                "command": "echo log: no critical errors found",
+                "status": "SUCCESS",
+                "output": "log: no critical errors found",
+                "returncode": 0
+            }
+        ],
+        "steps": [
+            "Check disk space",
+            "Check memory usage",
+            "Check current Nginx status",
+            "Review recent Nginx logs",
+            "Restart Nginx service",
+            "Verify Nginx service status",
+            "Verify application health endpoint"
+        ],
+        "commands": {
+            "Check disk space": "df -h",
+            "Check memory usage": "free -m",
+            "Check current Nginx status": "echo nginx status: active (running)",
+            "Review recent Nginx logs": "echo log: no critical errors found",
+            "Restart Nginx service": "echo nginx restarted successfully",
+            "Verify Nginx service status": "echo nginx status: active (running)",
+            "Verify application health endpoint": "echo HTTP 200 OK - application healthy"
+        },
+        "timeline": [
+            "19:57 Login",
+            "19:57 Execute Runbook",
+            "19:57 Check disk space FAILED",
+            "19:57 Check memory usage FAILED",
+            "19:57 Check current Nginx status SUCCESS",
+            "19:57 Review recent Nginx logs SUCCESS",
+            "19:57 Restart Nginx service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780757087": {
+        "run_id": "run_1780757087",
+        "runbook_title": "High CPU Usage",
+        "user": "developer",
+        "current_step_idx": 2,
+        "step_name": "Restart service",
+        "command": "systemctl restart nginx",
+        "results": [
+            {
+                "step": "Check CPU utilization",
+                "command": "top",
+                "status": "FAILED",
+                "output": "'top' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Find top resource-consuming process",
+                "command": "ps aux --sort=-%cpu | head",
+                "status": "FAILED",
+                "output": "'ps' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 255
+            }
+        ],
+        "steps": [
+            "Check CPU utilization",
+            "Find top resource-consuming process",
+            "Restart service"
+        ],
+        "commands": {
+            "Check CPU utilization": "top",
+            "Find top resource-consuming process": "ps aux --sort=-%cpu | head",
+            "Restart service": "systemctl restart nginx"
+        },
+        "timeline": [
+            "20:14 Login",
+            "20:14 Execute Runbook",
+            "20:14 Check CPU utilization FAILED",
+            "20:14 Find top resource-consuming process FAILED",
+            "20:14 Restart service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780757302": {
+        "run_id": "run_1780757302",
+        "runbook_title": "High CPU Usage",
+        "user": "developer",
+        "current_step_idx": 2,
+        "step_name": "Restart service",
+        "command": "systemctl restart nginx",
+        "results": [
+            {
+                "step": "Check CPU utilization",
+                "command": "top",
+                "status": "FAILED",
+                "output": "'top' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Find top resource-consuming process",
+                "command": "ps aux --sort=-%cpu | head",
+                "status": "FAILED",
+                "output": "'ps' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 255
+            }
+        ],
+        "steps": [
+            "Check CPU utilization",
+            "Find top resource-consuming process",
+            "Restart service"
+        ],
+        "commands": {
+            "Check CPU utilization": "top",
+            "Find top resource-consuming process": "ps aux --sort=-%cpu | head",
+            "Restart service": "systemctl restart nginx"
+        },
+        "timeline": [
+            "20:18 Login",
+            "20:18 Execute Runbook",
+            "20:18 Check CPU utilization FAILED",
+            "20:18 Find top resource-consuming process FAILED",
+            "20:18 Restart service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780757386": {
+        "run_id": "run_1780757386",
+        "runbook_title": "High CPU Usage",
+        "user": "developer",
+        "current_step_idx": 2,
+        "step_name": "Restart service",
+        "command": "systemctl restart nginx",
+        "results": [
+            {
+                "step": "Check CPU utilization",
+                "command": "top",
+                "status": "FAILED",
+                "output": "'top' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Find top resource-consuming process",
+                "command": "ps aux --sort=-%cpu | head",
+                "status": "FAILED",
+                "output": "'ps' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 255
+            }
+        ],
+        "steps": [
+            "Check CPU utilization",
+            "Find top resource-consuming process",
+            "Restart service"
+        ],
+        "commands": {
+            "Check CPU utilization": "top",
+            "Find top resource-consuming process": "ps aux --sort=-%cpu | head",
+            "Restart service": "systemctl restart nginx"
+        },
+        "timeline": [
+            "20:19 Login",
+            "20:19 Execute Runbook",
+            "20:19 Check CPU utilization FAILED",
+            "20:19 Find top resource-consuming process FAILED",
+            "20:19 Restart service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780757885": {
+        "run_id": "run_1780757885",
+        "runbook_title": "High CPU Usage",
+        "user": "developer",
+        "current_step_idx": 2,
+        "step_name": "Restart service",
+        "command": "systemctl restart nginx",
+        "results": [
+            {
+                "step": "Check CPU utilization",
+                "command": "top",
+                "status": "FAILED",
+                "output": "'top' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Find top resource-consuming process",
+                "command": "ps aux --sort=-%cpu | head",
+                "status": "FAILED",
+                "output": "'ps' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 255
+            }
+        ],
+        "steps": [
+            "Check CPU utilization",
+            "Find top resource-consuming process",
+            "Restart service"
+        ],
+        "commands": {
+            "Check CPU utilization": "top",
+            "Find top resource-consuming process": "ps aux --sort=-%cpu | head",
+            "Restart service": "systemctl restart nginx"
+        },
+        "timeline": [
+            "20:28 Login",
+            "20:28 Execute Runbook",
+            "20:28 Check CPU utilization FAILED",
+            "20:28 Find top resource-consuming process FAILED",
+            "20:28 Restart service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780760067": {
+        "run_id": "run_1780760067",
+        "runbook_title": "High CPU Usage",
+        "user": "developer",
+        "current_step_idx": 2,
+        "step_name": "Restart service",
+        "command": "systemctl restart nginx",
+        "results": [
+            {
+                "step": "Check CPU utilization",
+                "command": "top",
+                "status": "FAILED",
+                "output": "'top' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Find top resource-consuming process",
+                "command": "ps aux --sort=-%cpu | head",
+                "status": "FAILED",
+                "output": "'ps' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 255
+            }
+        ],
+        "steps": [
+            "Check CPU utilization",
+            "Find top resource-consuming process",
+            "Restart service"
+        ],
+        "commands": {
+            "Check CPU utilization": "top",
+            "Find top resource-consuming process": "ps aux --sort=-%cpu | head",
+            "Restart service": "systemctl restart nginx"
+        },
+        "timeline": [
+            "21:04 Login",
+            "21:04 Execute Runbook",
+            "21:04 Check CPU utilization FAILED",
+            "21:04 Find top resource-consuming process FAILED",
+            "21:04 Restart service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780804737": {
+        "run_id": "run_1780804737",
+        "runbook_title": "Memory Exhaustion Recovery Runbook",
+        "user": "developer",
+        "current_step_idx": 4,
+        "step_name": "Restart affected application service",
+        "command": "systemctl restart myapp",
+        "results": [
+            {
+                "step": "Check memory usage",
+                "command": "free -m",
+                "status": "FAILED",
+                "output": "'free' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Display memory summary",
+                "command": "vmstat -s",
+                "status": "FAILED",
+                "output": "'vmstat' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Identify top memory-consuming processes",
+                "command": "ps aux --sort=-%mem | head -10",
+                "status": "FAILED",
+                "output": "'ps' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 255
+            },
+            {
+                "step": "Review application logs",
+                "command": "tail -50 /var/log/syslog",
+                "status": "FAILED",
+                "output": "'tail' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            }
+        ],
+        "steps": [
+            "Check memory usage",
+            "Display memory summary",
+            "Identify top memory-consuming processes",
+            "Review application logs",
+            "Restart affected application service",
+            "Verify memory usage after restart",
+            "Confirm application health"
+        ],
+        "commands": {
+            "Check memory usage": "free -m",
+            "Display memory summary": "vmstat -s",
+            "Identify top memory-consuming processes": "ps aux --sort=-%mem | head -10",
+            "Review application logs": "tail -50 /var/log/syslog",
+            "Restart affected application service": "systemctl restart myapp",
+            "Verify memory usage after restart": "free -m",
+            "Confirm application health": "curl http://localhost:8080/health"
+        },
+        "timeline": [
+            "09:28 Login",
+            "09:28 Execute Runbook",
+            "09:28 Check memory usage FAILED",
+            "09:28 Display memory summary FAILED",
+            "09:28 Identify top memory-consuming processes FAILED",
+            "09:28 Review application logs FAILED",
+            "09:28 Restart affected application service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Display memory summary (command: 'vmstat -s') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Identify top memory-consuming processes (command: 'ps aux --sort=-%mem | head -10') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Review application logs (command: 'tail -50 /var/log/syslog') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Display memory summary (command: 'vmstat -s') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Identify top memory-consuming processes (command: 'ps aux --sort=-%mem | head -10') failed with return code 255.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            },
+            {
+                "failure": "Review application logs (command: 'tail -50 /var/log/syslog') failed with return code 1.",
+                "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+                "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+                "severity": "HIGH"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780806345": {
+        "run_id": "run_1780806345",
+        "runbook_title": "Memory Exhaustion Recovery Runbook",
+        "user": "developer",
+        "current_step_idx": 4,
+        "step_name": "Restart affected application service",
+        "command": "systemctl restart myapp",
+        "results": [
+            {
+                "step": "Check memory usage",
+                "command": "free -m",
+                "status": "FAILED",
+                "output": "'free' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Display memory summary",
+                "command": "vmstat -s",
+                "status": "FAILED",
+                "output": "Error: Command 'vmstat -s' is not on the allowlist and was blocked.",
+                "returncode": -1
+            },
+            {
+                "step": "Identify top memory-consuming processes",
+                "command": "ps aux --sort=-%mem | head -10",
+                "status": "FAILED",
+                "output": "Error: Command 'ps aux --sort=-%mem | head -10' is not on the allowlist and was blocked.",
+                "returncode": -1
+            },
+            {
+                "step": "Review application logs",
+                "command": "tail -50 /var/log/syslog",
+                "status": "FAILED",
+                "output": "Error: Command 'tail -50 /var/log/syslog' is not on the allowlist and was blocked.",
+                "returncode": -1
+            }
+        ],
+        "steps": [
+            "Check memory usage",
+            "Display memory summary",
+            "Identify top memory-consuming processes",
+            "Review application logs",
+            "Restart affected application service",
+            "Verify memory usage after restart",
+            "Confirm application health"
+        ],
+        "commands": {
+            "Check memory usage": "free -m",
+            "Display memory summary": "vmstat -s",
+            "Identify top memory-consuming processes": "ps aux --sort=-%mem | head -10",
+            "Review application logs": "tail -50 /var/log/syslog",
+            "Restart affected application service": "systemctl restart myapp",
+            "Verify memory usage after restart": "free -m",
+            "Confirm application health": "curl http://localhost:8080/health"
+        },
+        "timeline": [
+            "09:55 Login",
+            "09:55 Execute Runbook",
+            "09:55 Check memory usage FAILED",
+            "09:55 Display memory summary FAILED",
+            "09:55 Identify top memory-consuming processes FAILED",
+            "09:55 Review application logs FAILED",
+            "09:55 Restart affected application service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Display memory summary (command: 'vmstat -s') failed with return code -1.",
+                "root_cause": "Subprocess execution returned a non-zero exit code.",
+                "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+                "severity": "LOW"
+            },
+            {
+                "failure": "Identify top memory-consuming processes (command: 'ps aux --sort=-%mem | head -10') failed with return code -1.",
+                "root_cause": "Subprocess execution returned a non-zero exit code.",
+                "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+                "severity": "LOW"
+            },
+            {
+                "failure": "Review application logs (command: 'tail -50 /var/log/syslog') failed with return code -1.",
+                "root_cause": "Subprocess execution returned a non-zero exit code.",
+                "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+                "severity": "LOW"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Display memory summary (command: 'vmstat -s') failed with return code -1.",
+                "root_cause": "Subprocess execution returned a non-zero exit code.",
+                "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+                "severity": "LOW"
+            },
+            {
+                "failure": "Identify top memory-consuming processes (command: 'ps aux --sort=-%mem | head -10') failed with return code -1.",
+                "root_cause": "Subprocess execution returned a non-zero exit code.",
+                "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+                "severity": "LOW"
+            },
+            {
+                "failure": "Review application logs (command: 'tail -50 /var/log/syslog') failed with return code -1.",
+                "root_cause": "Subprocess execution returned a non-zero exit code.",
+                "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+                "severity": "LOW"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780806663": {
+        "run_id": "run_1780806663",
+        "runbook_title": "Nginx Service Recovery Runbook",
+        "user": "developer",
+        "current_step_idx": 4,
+        "step_name": "Restart Nginx service",
+        "command": "echo Restarting Nginx service",
+        "results": [
+            {
+                "step": "Check disk space",
+                "command": "echo Checking disk space",
+                "status": "SUCCESS",
+                "output": "Checking disk space",
+                "returncode": 0
+            },
+            {
+                "step": "Check memory usage",
+                "command": "echo Checking memory usage",
+                "status": "SUCCESS",
+                "output": "Checking memory usage",
+                "returncode": 0
+            },
+            {
+                "step": "Check current Nginx status",
+                "command": "echo Checking Nginx status",
+                "status": "SUCCESS",
+                "output": "Checking Nginx status",
+                "returncode": 0
+            },
+            {
+                "step": "Review recent Nginx logs",
+                "command": "echo Reviewing Nginx logs",
+                "status": "SUCCESS",
+                "output": "Reviewing Nginx logs",
+                "returncode": 0
+            }
+        ],
+        "steps": [
+            "Check disk space",
+            "Check memory usage",
+            "Check current Nginx status",
+            "Review recent Nginx logs",
+            "Restart Nginx service",
+            "Verify Nginx service status",
+            "Verify application health endpoint"
+        ],
+        "commands": {
+            "Check disk space": "echo Checking disk space",
+            "Check memory usage": "echo Checking memory usage",
+            "Check current Nginx status": "echo Checking Nginx status",
+            "Review recent Nginx logs": "echo Reviewing Nginx logs",
+            "Restart Nginx service": "echo Restarting Nginx service",
+            "Verify Nginx service status": "echo Verifying Nginx status",
+            "Verify application health endpoint": "echo Application health check successful"
+        },
+        "timeline": [
+            "10:01 Login",
+            "10:01 Execute Runbook",
+            "10:01 Check disk space SUCCESS",
+            "10:01 Check memory usage SUCCESS",
+            "10:01 Check current Nginx status SUCCESS",
+            "10:01 Review recent Nginx logs SUCCESS",
+            "10:01 Restart Nginx service Approval Requested"
+        ],
+        "failures": [],
+        "recommendations": [],
+        "status": "APPROVED"
+    },
+    "run_1780806750": {
+        "run_id": "run_1780806750",
+        "runbook_title": "Disk Space Cleanup Runbook",
+        "user": "developer",
+        "current_step_idx": 3,
+        "step_name": "Clean temporary files",
+        "command": "echo cleaned 1.2GB from /tmp",
+        "results": [
+            {
+                "step": "Check disk usage",
+                "command": "df -h",
+                "status": "FAILED",
+                "output": "'df' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Identify large files",
+                "command": "echo large files: /var/log/app.log (2.1GB)",
+                "status": "SUCCESS",
+                "output": "large files: /var/log/app.log (2.1GB)",
+                "returncode": 0
+            },
+            {
+                "step": "Review log directory size",
+                "command": "echo /var/log total: 3.4GB",
+                "status": "SUCCESS",
+                "output": "/var/log total: 3.4GB",
+                "returncode": 0
+            }
+        ],
+        "steps": [
+            "Check disk usage",
+            "Identify large files",
+            "Review log directory size",
+            "Clean temporary files",
+            "Verify available disk space"
+        ],
+        "commands": {
+            "Check disk usage": "df -h",
+            "Identify large files": "echo large files: /var/log/app.log (2.1GB)",
+            "Review log directory size": "echo /var/log total: 3.4GB",
+            "Clean temporary files": "echo cleaned 1.2GB from /tmp",
+            "Verify available disk space": "echo disk usage: 45% - healthy"
+        },
+        "timeline": [
+            "10:02 Login",
+            "10:02 Execute Runbook",
+            "10:02 Check disk usage FAILED",
+            "10:02 Identify large files SUCCESS",
+            "10:02 Review log directory size SUCCESS",
+            "10:02 Clean temporary files Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780809465": {
+        "run_id": "run_1780809465",
+        "runbook_title": "Disk Space Cleanup Runbook",
+        "user": "developer",
+        "current_step_idx": 3,
+        "step_name": "Clean temporary files",
+        "command": "echo cleaned 1.2GB from /tmp",
+        "results": [
+            {
+                "step": "Check disk usage",
+                "command": "df -h",
+                "status": "FAILED",
+                "output": "'df' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Identify large files",
+                "command": "echo large files: /var/log/app.log (2.1GB)",
+                "status": "SUCCESS",
+                "output": "large files: /var/log/app.log (2.1GB)",
+                "returncode": 0
+            },
+            {
+                "step": "Review log directory size",
+                "command": "echo /var/log total: 3.4GB",
+                "status": "SUCCESS",
+                "output": "/var/log total: 3.4GB",
+                "returncode": 0
+            }
+        ],
+        "steps": [
+            "Check disk usage",
+            "Identify large files",
+            "Review log directory size",
+            "Clean temporary files",
+            "Verify available disk space"
+        ],
+        "commands": {
+            "Check disk usage": "df -h",
+            "Identify large files": "echo large files: /var/log/app.log (2.1GB)",
+            "Review log directory size": "echo /var/log total: 3.4GB",
+            "Clean temporary files": "echo cleaned 1.2GB from /tmp",
+            "Verify available disk space": "echo disk usage: 45% - healthy"
+        },
+        "timeline": [
+            "10:47 Login",
+            "10:47 Execute Runbook",
+            "10:47 Check disk usage FAILED",
+            "10:47 Identify large files SUCCESS",
+            "10:47 Review log directory size SUCCESS",
+            "10:47 Clean temporary files Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780810123": {
+        "run_id": "run_1780810123",
+        "runbook_title": "Nginx Service Recovery Runbook",
+        "user": "developer",
+        "current_step_idx": 4,
+        "step_name": "Restart Nginx service",
+        "command": "echo nginx restarted successfully",
+        "results": [
+            {
+                "step": "Check disk space",
+                "command": "df -h",
+                "status": "FAILED",
+                "output": "'df' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Check memory usage",
+                "command": "free -m",
+                "status": "FAILED",
+                "output": "'free' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Check current Nginx status",
+                "command": "echo nginx status: active (running)",
+                "status": "SUCCESS",
+                "output": "nginx status: active (running)",
+                "returncode": 0
+            },
+            {
+                "step": "Review recent Nginx logs",
+                "command": "echo log: no critical errors found",
+                "status": "SUCCESS",
+                "output": "log: no critical errors found",
+                "returncode": 0
+            }
+        ],
+        "steps": [
+            "Check disk space",
+            "Check memory usage",
+            "Check current Nginx status",
+            "Review recent Nginx logs",
+            "Restart Nginx service",
+            "Verify Nginx service status",
+            "Verify application health endpoint"
+        ],
+        "commands": {
+            "Check disk space": "df -h",
+            "Check memory usage": "free -m",
+            "Check current Nginx status": "echo nginx status: active (running)",
+            "Review recent Nginx logs": "echo log: no critical errors found",
+            "Restart Nginx service": "echo nginx restarted successfully",
+            "Verify Nginx service status": "echo nginx status: active (running)",
+            "Verify application health endpoint": "echo HTTP 200 OK - application healthy"
+        },
+        "timeline": [
+            "10:58 Login",
+            "10:58 Execute Runbook",
+            "10:58 Check disk space FAILED",
+            "10:58 Check memory usage FAILED",
+            "10:58 Check current Nginx status SUCCESS",
+            "10:58 Review recent Nginx logs SUCCESS",
+            "10:58 Restart Nginx service Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            },
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780851753": {
+        "run_id": "run_1780851753",
+        "runbook_title": "Memory Exhaustion Recovery Runbook",
+        "user": "developer",
+        "current_step_idx": 5,
+        "step_name": "Verify memory usage after restart",
+        "command": "free -m",
+        "results": [
+            {
+                "step": "Check memory usage",
+                "command": "free -m",
+                "status": "FAILED",
+                "output": "'free' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Display memory summary",
+                "command": "vmstat -s",
+                "status": "BLOCKED",
+                "output": "Command 'vmstat -s' is not in the allowed command map.",
+                "returncode": -1
+            },
+            {
+                "step": "Identify top memory-consuming processes",
+                "command": "ps aux --sort=-%mem | head -10",
+                "status": "BLOCKED",
+                "output": "Command 'ps aux --sort=-%mem | head -10' is not in the allowed command map.",
+                "returncode": -1
+            },
+            {
+                "step": "Review application logs",
+                "command": "tail -50 /var/log/syslog",
+                "status": "BLOCKED",
+                "output": "Command 'tail -50 /var/log/syslog' is not in the allowed command map.",
+                "returncode": -1
+            },
+            {
+                "step": "Restart affected application service",
+                "command": "systemctl restart myapp",
+                "status": "BLOCKED",
+                "output": "Command 'systemctl restart myapp' is not in the allowed command map.",
+                "returncode": -1
+            }
+        ],
+        "steps": [
+            "Check memory usage",
+            "Display memory summary",
+            "Identify top memory-consuming processes",
+            "Review application logs",
+            "Restart affected application service",
+            "Verify memory usage after restart",
+            "Confirm application health"
+        ],
+        "commands": {
+            "Check memory usage": "free -m",
+            "Display memory summary": "vmstat -s",
+            "Identify top memory-consuming processes": "ps aux --sort=-%mem | head -10",
+            "Review application logs": "tail -50 /var/log/syslog",
+            "Restart affected application service": "systemctl restart myapp",
+            "Verify memory usage after restart": "free -m",
+            "Confirm application health": "curl http://localhost:8080/health"
+        },
+        "timeline": [
+            "22:32 Login",
+            "22:32 Execute Runbook",
+            "22:32 Check memory usage FAILED",
+            "22:32 Display memory summary BLOCKED",
+            "22:32 Identify top memory-consuming processes BLOCKED",
+            "22:32 Review application logs BLOCKED",
+            "22:32 Restart affected application service BLOCKED",
+            "22:32 Verify memory usage after restart Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "status": "APPROVED"
+    },
+    "run_1780852117": {
+        "run_id": "run_1780852117",
+        "runbook_title": "High CPU Troubleshooting Runbook",
+        "user": "developer",
+        "current_step_idx": 3,
+        "step_name": "Restart affected service",
+        "command": "echo service restarted successfully",
+        "results": [
+            {
+                "step": "Check CPU usage",
+                "command": "echo CPU usage: 23%",
+                "status": "SUCCESS",
+                "output": "CPU usage: 23%",
+                "returncode": 0
+            },
+            {
+                "step": "Identify top CPU-consuming processes",
+                "command": "echo top process: python3 (12%), nginx (8%)",
+                "status": "SUCCESS",
+                "output": "top process: python3 (12%), nginx (8%)",
+                "returncode": 0
+            },
+            {
+                "step": "Check system load",
+                "command": "echo system load: 0.45 0.38 0.32",
+                "status": "SUCCESS",
+                "output": "system load: 0.45 0.38 0.32",
+                "returncode": 0
+            }
+        ],
+        "steps": [
+            "Check CPU usage",
+            "Identify top CPU-consuming processes",
+            "Check system load",
+            "Restart affected service",
+            "Verify CPU usage has decreased"
+        ],
+        "commands": {
+            "Check CPU usage": "echo CPU usage: 23%",
+            "Identify top CPU-consuming processes": "echo top process: python3 (12%), nginx (8%)",
+            "Check system load": "echo system load: 0.45 0.38 0.32",
+            "Restart affected service": "echo service restarted successfully",
+            "Verify CPU usage has decreased": "echo CPU usage: 11% - within normal range"
+        },
+        "timeline": [
+            "22:38 Login",
+            "22:38 Execute Runbook",
+            "22:38 Check CPU usage SUCCESS",
+            "22:38 Identify top CPU-consuming processes SUCCESS",
+            "22:38 Check system load SUCCESS",
+            "22:38 Restart affected service Approval Requested"
+        ],
+        "failures": [],
+        "recommendations": [],
+        "status": "APPROVED"
+    },
+    "run_1780852738": {
+        "run_id": "run_1780852738",
+        "runbook_title": "Memory Exhaustion Recovery Runbook",
+        "user": "developer",
+        "current_step_idx": 5,
+        "step_name": "Verify memory usage after restart",
+        "command": "free -m",
+        "results": [
+            {
+                "step": "Check memory usage",
+                "command": "free -m",
+                "status": "FAILED",
+                "output": "'free' is not recognized as an internal or external command,\noperable program or batch file.",
+                "returncode": 1
+            },
+            {
+                "step": "Display memory summary",
+                "command": "vmstat -s",
+                "status": "BLOCKED",
+                "output": "Command 'vmstat -s' is not in the allowed command map.",
+                "returncode": -1
+            },
+            {
+                "step": "Identify top memory-consuming processes",
+                "command": "ps aux --sort=-%mem | head -10",
+                "status": "BLOCKED",
+                "output": "Command 'ps aux --sort=-%mem | head -10' is not in the allowed command map.",
+                "returncode": -1
+            },
+            {
+                "step": "Review application logs",
+                "command": "tail -50 /var/log/syslog",
+                "status": "BLOCKED",
+                "output": "Command 'tail -50 /var/log/syslog' is not in the allowed command map.",
+                "returncode": -1
+            },
+            {
+                "step": "Restart affected application service",
+                "command": "systemctl restart myapp",
+                "status": "BLOCKED",
+                "output": "Command 'systemctl restart myapp' is not in the allowed command map.",
+                "returncode": -1
+            }
+        ],
+        "steps": [
+            "Check memory usage",
+            "Display memory summary",
+            "Identify top memory-consuming processes",
+            "Review application logs",
+            "Restart affected application service",
+            "Verify memory usage after restart",
+            "Confirm application health"
+        ],
+        "commands": {
+            "Check memory usage": "free -m",
+            "Display memory summary": "vmstat -s",
+            "Identify top memory-consuming processes": "ps aux --sort=-%mem | head -10",
+            "Review application logs": "tail -50 /var/log/syslog",
+            "Restart affected application service": "systemctl restart myapp",
+            "Verify memory usage after restart": "free -m",
+            "Confirm application health": "curl http://localhost:8080/health"
+        },
+        "timeline": [
+            "22:48 Login",
+            "22:48 Execute Runbook",
+            "22:48 Check memory usage FAILED",
+            "22:48 Display memory summary BLOCKED",
+            "22:48 Identify top memory-consuming processes BLOCKED",
+            "22:49 Review application logs BLOCKED",
+            "22:49 Restart affected application service BLOCKED",
+            "22:49 Verify memory usage after restart Approval Requested"
+        ],
+        "failures": [
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "recommendations": [
+            {
+                "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+                "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+                "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+                "severity": "MEDIUM"
+            }
+        ],
+        "status": "APPROVED"
+    }
+}

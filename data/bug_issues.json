@@ -1,0 +1,81 @@
+[
+    {
+        "issue_id": "BUG-101",
+        "title": "Memory leak on runbook file uploader processing",
+        "priority": "Critical",
+        "status": "Open",
+        "assignee": "Developer Alice",
+        "created_at": "2026-06-05 14:22",
+        "comments": [
+            {
+                "user": "Alice",
+                "timestamp": "2026-06-05 15:30",
+                "comment": "Garbage collection is not freeing file stream handles."
+            },
+            {
+                "user": "TestVerifier",
+                "timestamp": "2026-06-06 20:33",
+                "comment": "Added a test verification comment."
+            },
+            {
+                "user": "TestVerifier",
+                "timestamp": "2026-06-06 20:39",
+                "comment": "Added a test verification comment."
+            },
+            {
+                "user": "TestVerifier",
+                "timestamp": "2026-06-06 20:48",
+                "comment": "Added a test verification comment."
+            },
+            {
+                "user": "TestVerifier",
+                "timestamp": "2026-06-06 20:59",
+                "comment": "Added a test verification comment."
+            },
+            {
+                "user": "TestVerifier",
+                "timestamp": "2026-06-06 21:01",
+                "comment": "Added a test verification comment."
+            }
+        ]
+    },
+    {
+        "issue_id": "BUG-102",
+        "title": "Bcrypt verify_password delay slowing page loads",
+        "priority": "High",
+        "status": "In Progress",
+        "assignee": "Developer Bob",
+        "created_at": "2026-06-06 09:00",
+        "comments": [
+            {
+                "user": "Bob",
+                "timestamp": "2026-06-06 10:00",
+                "comment": "Investigating caching password checks or threading."
+            }
+        ]
+    },
+    {
+        "issue_id": "BUG-103",
+        "title": "JSON export report formatting spacing errors",
+        "priority": "Medium",
+        "status": "Closed",
+        "assignee": "Developer Alice",
+        "created_at": "2026-06-04 11:00",
+        "comments": [
+            {
+                "user": "Alice",
+                "timestamp": "2026-06-04 12:00",
+                "comment": "Refactored report.py schemas to prettify output spacing."
+            }
+        ]
+    },
+    {
+        "issue_id": "BUG-104",
+        "title": "Active user sessions table showing incorrect last activity",
+        "priority": "Low",
+        "status": "Open",
+        "assignee": "Developer Bob",
+        "created_at": "2026-06-06 13:10",
+        "comments": []
+    }
+]

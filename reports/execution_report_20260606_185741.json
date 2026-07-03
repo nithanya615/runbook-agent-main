@@ -1,0 +1,12 @@
+{
+    "runbook": "High CPU Usage",
+    "timestamp": "2026-06-06T18:57:41.197653",
+    "summary": {
+        "total": 0,
+        "success": 0,
+        "failed": 0,
+        "skipped": 0,
+        "blocked": 0
+    },
+    "results": []
+}

@@ -1,0 +1,482 @@
+{
+    "runbook": "Disk Space Full",
+    "timestamp": "2026-06-06T20:18:55.139282",
+    "operator": {
+        "user": "developer",
+        "role": "developer"
+    },
+    "summary": {
+        "total": 4,
+        "success": 0,
+        "failed": 3,
+        "skipped": 0,
+        "blocked": 1
+    },
+    "results": [
+        {
+            "step": "Check disk usage",
+            "command": "df -h",
+            "status": "FAILED",
+            "output": "'df' is not recognized as an internal or external command,\noperable program or batch file.",
+            "returncode": 1
+        },
+        {
+            "step": "Locate large files",
+            "command": "find / -type f -size +500M",
+            "status": "FAILED",
+            "output": "FIND: Invalid switch",
+            "returncode": 2
+        },
+        {
+            "step": "Check log directory size",
+            "command": "du -sh /var/log/*",
+            "status": "FAILED",
+            "output": "'du' is not recognized as an internal or external command,\noperable program or batch file.",
+            "returncode": 1
+        },
+        {
+            "step": "Clear old log files",
+            "command": "rm -f /var/log/*.old",
+            "status": "BLOCKED",
+            "output": "Security Alert: Command 'rm -f /var/log/*.old' was blocked. It contains destructive keywords.",
+            "returncode": -1
+        }
+    ],
+    "timeline": [
+        "20:18 Login",
+        "20:18 Execute Runbook",
+        "20:18 Check disk usage FAILED",
+        "20:18 Locate large files FAILED",
+        "20:18 Check log directory size FAILED",
+        "20:18 Clear old log files BLOCKED"
+    ],
+    "audit_trail": [
+        {
+            "timestamp": "2026-06-06 19:49:27",
+            "user": "developer",
+            "role": "developer",
+            "action": "LOGIN",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Successful user login."
+        },
+        {
+            "timestamp": "2026-06-06 19:49:55",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_RUNBOOK",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Initiated execution of runbook 'High CPU Usage' (Run ID: run_1780755595)."
+        },
+        {
+            "timestamp": "2026-06-06 19:49:55",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check CPU utilization",
+            "status": "FAILED",
+            "details": "Target executable or utility is missing or not declared in the system PATH env variable."
+        },
+        {
+            "timestamp": "2026-06-06 19:49:55",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Find top resource-consuming process",
+            "status": "FAILED",
+            "details": "Target executable or utility is missing or not declared in the system PATH env variable."
+        },
+        {
+            "timestamp": "2026-06-06 19:49:56",
+            "user": "developer",
+            "role": "developer",
+            "action": "APPROVAL_REQUEST",
+            "step": "Restart service",
+            "status": "PENDING",
+            "details": "Risky step approval required. Command: systemctl restart nginx"
+        },
+        {
+            "timestamp": "2026-06-06 19:50:55",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_RUNBOOK",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Initiated execution of runbook 'Nginx Service Recovery Runbook' (Run ID: run_1780755655)."
+        },
+        {
+            "timestamp": "2026-06-06 19:50:56",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check disk space",
+            "status": "FAILED",
+            "details": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows)."
+        },
+        {
+            "timestamp": "2026-06-06 19:50:56",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check memory usage",
+            "status": "FAILED",
+            "details": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows)."
+        },
+        {
+            "timestamp": "2026-06-06 19:50:56",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_STEP",
+            "step": "Check current Nginx status",
+            "status": "SUCCESS",
+            "details": ""
+        },
+        {
+            "timestamp": "2026-06-06 19:50:56",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_STEP",
+            "step": "Review recent Nginx logs",
+            "status": "SUCCESS",
+            "details": ""
+        },
+        {
+            "timestamp": "2026-06-06 19:50:56",
+            "user": "developer",
+            "role": "developer",
+            "action": "APPROVAL_REQUEST",
+            "step": "Restart Nginx service",
+            "status": "PENDING",
+            "details": "Risky step approval required. Command: echo nginx restarted successfully"
+        },
+        {
+            "timestamp": "2026-06-06 19:56:30",
+            "user": "developer",
+            "role": "unknown",
+            "action": "FAILED_LOGIN",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Denied access: failed login attempt for user 'developer'."
+        },
+        {
+            "timestamp": "2026-06-06 19:56:31",
+            "user": "developer",
+            "role": "unknown",
+            "action": "FAILED_LOGIN",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Denied access: failed login attempt for user 'developer'."
+        },
+        {
+            "timestamp": "2026-06-06 19:56:38",
+            "user": "developer",
+            "role": "developer",
+            "action": "LOGIN",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Successful user login."
+        },
+        {
+            "timestamp": "2026-06-06 19:57:00",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_RUNBOOK",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Initiated execution of runbook 'Nginx Service Recovery Runbook' (Run ID: run_1780756020)."
+        },
+        {
+            "timestamp": "2026-06-06 19:57:00",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check disk space",
+            "status": "FAILED",
+            "details": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows)."
+        },
+        {
+            "timestamp": "2026-06-06 19:57:00",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check memory usage",
+            "status": "FAILED",
+            "details": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows)."
+        },
+        {
+            "timestamp": "2026-06-06 19:57:01",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_STEP",
+            "step": "Check current Nginx status",
+            "status": "SUCCESS",
+            "details": ""
+        },
+        {
+            "timestamp": "2026-06-06 19:57:01",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_STEP",
+            "step": "Review recent Nginx logs",
+            "status": "SUCCESS",
+            "details": ""
+        },
+        {
+            "timestamp": "2026-06-06 19:57:01",
+            "user": "developer",
+            "role": "developer",
+            "action": "APPROVAL_REQUEST",
+            "step": "Restart Nginx service",
+            "status": "PENDING",
+            "details": "Risky step approval required. Command: echo nginx restarted successfully"
+        },
+        {
+            "timestamp": "2026-06-06 20:00:56",
+            "user": "developer",
+            "role": "developer",
+            "action": "LOGIN",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Successful user login."
+        },
+        {
+            "timestamp": "2026-06-06 20:13:45",
+            "user": "developer",
+            "role": "developer",
+            "action": "LOGIN",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Successful user login."
+        },
+        {
+            "timestamp": "2026-06-06 20:14:04",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_RUNBOOK",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Initiated execution of runbook 'Disk Space Full' (Run ID: run_1780757044)."
+        },
+        {
+            "timestamp": "2026-06-06 20:14:05",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check disk usage",
+            "status": "FAILED",
+            "details": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows)."
+        },
+        {
+            "timestamp": "2026-06-06 20:14:05",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Locate large files",
+            "status": "FAILED",
+            "details": "Subprocess execution returned a non-zero exit code."
+        },
+        {
+            "timestamp": "2026-06-06 20:14:05",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check log directory size",
+            "status": "FAILED",
+            "details": "Target executable or utility is missing or not declared in the system PATH env variable."
+        },
+        {
+            "timestamp": "2026-06-06 20:14:05",
+            "user": "developer",
+            "role": "developer",
+            "action": "DENIED_ACCESS",
+            "step": "Clear old log files",
+            "status": "BLOCKED",
+            "details": "Suspicious activity: unallowed command blocked. Command: rm -f /var/log/*.old"
+        },
+        {
+            "timestamp": "2026-06-06 20:14:06",
+            "user": "developer",
+            "role": "developer",
+            "action": "REPORT_GENERATION",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Generated JSON incident report: execution_report_20260606_201406.json"
+        },
+        {
+            "timestamp": "2026-06-06 20:14:47",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_RUNBOOK",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Initiated execution of runbook 'High CPU Usage' (Run ID: run_1780757087)."
+        },
+        {
+            "timestamp": "2026-06-06 20:14:47",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check CPU utilization",
+            "status": "FAILED",
+            "details": "Target executable or utility is missing or not declared in the system PATH env variable."
+        },
+        {
+            "timestamp": "2026-06-06 20:14:47",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Find top resource-consuming process",
+            "status": "FAILED",
+            "details": "Target executable or utility is missing or not declared in the system PATH env variable."
+        },
+        {
+            "timestamp": "2026-06-06 20:14:47",
+            "user": "developer",
+            "role": "developer",
+            "action": "APPROVAL_REQUEST",
+            "step": "Restart service",
+            "status": "PENDING",
+            "details": "Risky step approval required. Command: systemctl restart nginx"
+        },
+        {
+            "timestamp": "2026-06-06 20:16:09",
+            "user": "developer",
+            "role": "developer",
+            "action": "LOGOUT",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "User signed out successfully."
+        },
+        {
+            "timestamp": "2026-06-06 20:18:10",
+            "user": "developer",
+            "role": "developer",
+            "action": "LOGIN",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Successful user login."
+        },
+        {
+            "timestamp": "2026-06-06 20:18:22",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_RUNBOOK",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Initiated execution of runbook 'High CPU Usage' (Run ID: run_1780757302)."
+        },
+        {
+            "timestamp": "2026-06-06 20:18:22",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check CPU utilization",
+            "status": "FAILED",
+            "details": "Target executable or utility is missing or not declared in the system PATH env variable."
+        },
+        {
+            "timestamp": "2026-06-06 20:18:22",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Find top resource-consuming process",
+            "status": "FAILED",
+            "details": "Target executable or utility is missing or not declared in the system PATH env variable."
+        },
+        {
+            "timestamp": "2026-06-06 20:18:22",
+            "user": "developer",
+            "role": "developer",
+            "action": "APPROVAL_REQUEST",
+            "step": "Restart service",
+            "status": "PENDING",
+            "details": "Risky step approval required. Command: systemctl restart nginx"
+        },
+        {
+            "timestamp": "2026-06-06 20:18:53",
+            "user": "developer",
+            "role": "developer",
+            "action": "EXECUTE_RUNBOOK",
+            "step": "N/A",
+            "status": "N/A",
+            "details": "Initiated execution of runbook 'Disk Space Full' (Run ID: run_1780757333)."
+        },
+        {
+            "timestamp": "2026-06-06 20:18:54",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check disk usage",
+            "status": "FAILED",
+            "details": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows)."
+        },
+        {
+            "timestamp": "2026-06-06 20:18:54",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Locate large files",
+            "status": "FAILED",
+            "details": "Subprocess execution returned a non-zero exit code."
+        },
+        {
+            "timestamp": "2026-06-06 20:18:54",
+            "user": "developer",
+            "role": "developer",
+            "action": "FAILED_EXECUTION",
+            "step": "Check log directory size",
+            "status": "FAILED",
+            "details": "Target executable or utility is missing or not declared in the system PATH env variable."
+        },
+        {
+            "timestamp": "2026-06-06 20:18:54",
+            "user": "developer",
+            "role": "developer",
+            "action": "DENIED_ACCESS",
+            "step": "Clear old log files",
+            "status": "BLOCKED",
+            "details": "Suspicious activity: unallowed command blocked. Command: rm -f /var/log/*.old"
+        }
+    ],
+    "failures": [
+        {
+            "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+            "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+            "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+            "severity": "MEDIUM"
+        },
+        {
+            "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code 2.",
+            "root_cause": "Subprocess execution returned a non-zero exit code.",
+            "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+            "severity": "LOW"
+        },
+        {
+            "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code 1.",
+            "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+            "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+            "severity": "HIGH"
+        }
+    ],
+    "recommendations": [
+        {
+            "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+            "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+            "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+            "severity": "MEDIUM"
+        },
+        {
+            "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code 2.",
+            "root_cause": "Subprocess execution returned a non-zero exit code.",
+            "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+            "severity": "LOW"
+        },
+        {
+            "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code 1.",
+            "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+            "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+            "severity": "HIGH"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "manager": {
+        "username": "manager",
+        "role": "manager",
+        "login_time": "2026-06-07 10:59:53",
+        "last_activity": "2026-06-07 22:54:42"
+    },
+    "developer": {
+        "username": "developer",
+        "role": "developer",
+        "login_time": "2026-06-07 23:40:52",
+        "last_activity": "2026-06-07 23:42:14"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "developer": {
+        "password_hash": "$2b$12$22Xmvx5T5.izKphChP3iCuRM7rY0hR/kU/koG9S98O/J.Y0A72QUu",
+        "role": "developer"
+    },
+    "manager": {
+        "password_hash": "$2b$12$NMNSS7KHmJqufC7KSvDogeriUIYMX4oV1rPn/3XFPlaoaWFxvCVvu",
+        "role": "manager"
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "runbook": "Nginx Service Recovery Runbook",
+    "timestamp": "2026-06-06T21:02:04.722974",
+    "operator": {
+        "user": "unknown",
+        "role": "unknown"
+    },
+    "summary": {
+        "total": 4,
+        "success": 1,
+        "failed": 2,
+        "skipped": 1,
+        "blocked": 0
+    },
+    "results": [
+        {
+            "step": "Check disk space",
+            "command": "df -h",
+            "status": "FAILED",
+            "output": "'df' is not recognized as an internal or external command,\noperable program or batch file.",
+            "returncode": 1
+        },
+        {
+            "step": "Restart Nginx service",
+            "command": "echo nginx restarted successfully",
+            "status": "SUCCESS",
+            "output": "nginx restarted successfully",
+            "returncode": 0
+        },
+        {
+            "step": "Invalid step name",
+            "status": "SKIPPED",
+            "output": "Command not mapped"
+        },
+        {
+            "step": "Check disk space",
+            "command": "df -h",
+            "status": "FAILED",
+            "output": "'df' is not recognized as an internal or external command,\noperable program or batch file.",
+            "returncode": 1
+        }
+    ],
+    "timeline": [],
+    "audit_trail": [],
+    "failures": [],
+    "recommendations": []
+}

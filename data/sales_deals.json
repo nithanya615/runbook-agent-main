@@ -1,0 +1,52 @@
+[
+    {
+        "deal_id": "DEAL-001",
+        "name": "Enterprise Renewal Contract",
+        "company": "Acme Corp",
+        "value": 120000.0,
+        "stage": "Proposal",
+        "owner": "Sales Diana",
+        "last_contact": "2026-06-05",
+        "notes": "Sent updated quote. Client legal is reviewing clauses."
+    },
+    {
+        "deal_id": "DEAL-002",
+        "name": "AWS Migration consultation and planning",
+        "company": "Globex Corp",
+        "value": 85000.0,
+        "stage": "Negotiation",
+        "owner": "Sales Helen",
+        "last_contact": "2026-06-06",
+        "notes": "Negotiating engineering hourly rates. Expected close next week."
+    },
+    {
+        "deal_id": "DEAL-003",
+        "name": "Platform Setup & Antivirus Installation",
+        "company": "Initech",
+        "value": 25000.0,
+        "stage": "Lead",
+        "owner": "Sales Diana",
+        "last_contact": "2026-06-04",
+        "notes": "Intro call completed successfully. Awaiting details on device counts."
+    },
+    {
+        "deal_id": "DEAL-004",
+        "name": "CRM Custom Integration Project",
+        "company": "Wayne Enterprises",
+        "value": 350000.0,
+        "stage": "Closed Won",
+        "owner": "Sales Helen",
+        "last_contact": "2026-05-30",
+        "notes": "Contract fully signed and initial deposit invoice paid."
+    },
+    {
+        "deal_id": "DEAL-005",
+        "name": "Disaster Recovery Consulting Setup",
+        "company": "Umbrella Corp",
+        "value": 45000.0,
+        "stage": "Closed Lost",
+        "owner": "Sales Diana",
+        "last_contact": "2026-05-25",
+        "notes": "Lost out due to security compliance requirements. Will build in-house."
+    }
+]

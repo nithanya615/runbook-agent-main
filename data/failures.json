@@ -1,0 +1,530 @@
+[
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 19:44:25",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 19:49:55",
+        "stderr": "'top' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 19:49:55",
+        "stderr": "'ps' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 19:50:55",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 19:50:56",
+        "stderr": "'free' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 19:57:00",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 19:57:00",
+        "stderr": "'free' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 20:11:20",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 20:12:12",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 20:14:05",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code 2.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-06 20:14:05",
+        "stderr": "FIND: Invalid switch"
+    },
+    {
+        "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:14:05",
+        "stderr": "'du' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:14:47",
+        "stderr": "'top' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:14:47",
+        "stderr": "'ps' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:18:22",
+        "stderr": "'top' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:18:22",
+        "stderr": "'ps' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 20:18:54",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code 2.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-06 20:18:54",
+        "stderr": "FIND: Invalid switch"
+    },
+    {
+        "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:18:54",
+        "stderr": "'du' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:19:46",
+        "stderr": "'top' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:19:46",
+        "stderr": "'ps' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 20:24:04",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code 2.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-06 20:24:05",
+        "stderr": "FIND: Invalid switch"
+    },
+    {
+        "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:24:05",
+        "stderr": "'du' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 20:26:43",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:28:06",
+        "stderr": "'top' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 20:28:06",
+        "stderr": "'ps' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 20:33:14",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 20:39:15",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 20:59:52",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 21:00:43",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 21:01:51",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check CPU utilization (command: 'top') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 21:04:27",
+        "stderr": "'top' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Find top resource-consuming process (command: 'ps aux --sort=-%cpu | head') failed with return code 255.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-06 21:04:27",
+        "stderr": "'ps' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 21:09:42",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 21:13:36",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-06 21:23:53",
+        "stderr": "df: command not found"
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 09:04:58",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code 2.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 09:04:58",
+        "stderr": "FIND: Invalid switch"
+    },
+    {
+        "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-07 09:04:59",
+        "stderr": "'du' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 09:28:32",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code 2.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 09:28:33",
+        "stderr": "FIND: Invalid switch"
+    },
+    {
+        "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-07 09:28:33",
+        "stderr": "'du' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 09:28:57",
+        "stderr": "'free' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Display memory summary (command: 'vmstat -s') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-07 09:28:57",
+        "stderr": "'vmstat' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Identify top memory-consuming processes (command: 'ps aux --sort=-%mem | head -10') failed with return code 255.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-07 09:28:58",
+        "stderr": "'ps' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Review application logs (command: 'tail -50 /var/log/syslog') failed with return code 1.",
+        "root_cause": "Target executable or utility is missing or not declared in the system PATH env variable.",
+        "recommendation": "Install the missing dependency, check command spelling, or declare the full absolute executable path.",
+        "severity": "HIGH",
+        "timestamp": "2026-06-07 09:28:58",
+        "stderr": "'tail' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 09:55:46",
+        "stderr": "'free' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Display memory summary (command: 'vmstat -s') failed with return code -1.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 09:55:46",
+        "stderr": "Error: Command 'vmstat -s' is not on the allowlist and was blocked."
+    },
+    {
+        "failure": "Identify top memory-consuming processes (command: 'ps aux --sort=-%mem | head -10') failed with return code -1.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 09:55:46",
+        "stderr": "Error: Command 'ps aux --sort=-%mem | head -10' is not on the allowlist and was blocked."
+    },
+    {
+        "failure": "Review application logs (command: 'tail -50 /var/log/syslog') failed with return code -1.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 09:55:47",
+        "stderr": "Error: Command 'tail -50 /var/log/syslog' is not on the allowlist and was blocked."
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 10:02:00",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code -1.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 10:02:00",
+        "stderr": "Error: Command 'find / -type f -size +500M' is not on the allowlist and was blocked."
+    },
+    {
+        "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code -1.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 10:02:00",
+        "stderr": "Error: Command 'du -sh /var/log/*' is not on the allowlist and was blocked."
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 10:02:31",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 10:43:06",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code -1.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 10:43:06",
+        "stderr": "Error: Command 'find / -type f -size +500M' is not on the allowlist and was blocked."
+    },
+    {
+        "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code -1.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 10:43:06",
+        "stderr": "Error: Command 'du -sh /var/log/*' is not on the allowlist and was blocked."
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 10:43:14",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Locate large files (command: 'find / -type f -size +500M') failed with return code -1.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 10:43:15",
+        "stderr": "Error: Command 'find / -type f -size +500M' is not on the allowlist and was blocked."
+    },
+    {
+        "failure": "Check log directory size (command: 'du -sh /var/log/*') failed with return code -1.",
+        "root_cause": "Subprocess execution returned a non-zero exit code.",
+        "recommendation": "Check execution permissions, verify executable path, and ensure arguments are valid.",
+        "severity": "LOW",
+        "timestamp": "2026-06-07 10:43:15",
+        "stderr": "Error: Command 'du -sh /var/log/*' is not on the allowlist and was blocked."
+    },
+    {
+        "failure": "Check disk usage (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 10:47:45",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 10:58:43",
+        "stderr": "'df' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 10:58:44",
+        "stderr": "'free' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 22:32:34",
+        "stderr": "'free' is not recognized as an internal or external command,\noperable program or batch file."
+    },
+    {
+        "failure": "Check memory usage (command: 'free -m') failed with return code 1.",
+        "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+        "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+        "severity": "MEDIUM",
+        "timestamp": "2026-06-07 22:48:59",
+        "stderr": "'free' is not recognized as an internal or external command,\noperable program or batch file."
+    }
+]

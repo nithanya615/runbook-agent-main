@@ -1,0 +1,62 @@
+{
+    "runbook": "Nginx Service Recovery Runbook",
+    "timestamp": "2026-06-06T15:48:23.804647",
+    "summary": {
+        "total": 7,
+        "success": 5,
+        "failed": 2,
+        "skipped": 0,
+        "blocked": 0
+    },
+    "results": [
+        {
+            "step": "Check disk space",
+            "command": "df -h",
+            "status": "FAILED",
+            "output": "'df' is not recognized as an internal or external command,\noperable program or batch file.",
+            "returncode": 1
+        },
+        {
+            "step": "Check memory usage",
+            "command": "free -m",
+            "status": "FAILED",
+            "output": "'free' is not recognized as an internal or external command,\noperable program or batch file.",
+            "returncode": 1
+        },
+        {
+            "step": "Check current Nginx status",
+            "command": "echo nginx status: active (running)",
+            "status": "SUCCESS",
+            "output": "nginx status: active (running)",
+            "returncode": 0
+        },
+        {
+            "step": "Review recent Nginx logs",
+            "command": "echo log: no critical errors found",
+            "status": "SUCCESS",
+            "output": "log: no critical errors found",
+            "returncode": 0
+        },
+        {
+            "step": "Restart Nginx service",
+            "command": "echo nginx restarted successfully",
+            "status": "SUCCESS",
+            "output": "nginx restarted successfully",
+            "returncode": 0
+        },
+        {
+            "step": "Verify Nginx service status",
+            "command": "echo nginx status: active (running)",
+            "status": "SUCCESS",
+            "output": "nginx status: active (running)",
+            "returncode": 0
+        },
+        {
+            "step": "Verify application health endpoint",
+            "command": "echo HTTP 200 OK - application healthy",
+            "status": "SUCCESS",
+            "output": "HTTP 200 OK - application healthy",
+            "returncode": 0
+        }
+    ]
+}

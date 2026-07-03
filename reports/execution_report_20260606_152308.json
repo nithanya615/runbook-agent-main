@@ -1,0 +1,47 @@
+{
+    "runbook": "High CPU Troubleshooting Runbook",
+    "timestamp": "2026-06-06T15:23:08.987815",
+    "summary": {
+        "total": 5,
+        "success": 4,
+        "failed": 0,
+        "skipped": 1,
+        "blocked": 0
+    },
+    "results": [
+        {
+            "step": "Check CPU usage",
+            "command": "echo CPU usage: 23%",
+            "status": "SUCCESS",
+            "output": "CPU usage: 23%",
+            "returncode": 0
+        },
+        {
+            "step": "Identify top CPU-consuming processes",
+            "command": "echo top process: python3 (12%), nginx (8%)",
+            "status": "SUCCESS",
+            "output": "top process: python3 (12%), nginx (8%)",
+            "returncode": 0
+        },
+        {
+            "step": "Check system load",
+            "command": "echo system load: 0.45 0.38 0.32",
+            "status": "SUCCESS",
+            "output": "system load: 0.45 0.38 0.32",
+            "returncode": 0
+        },
+        {
+            "step": "Restart affected service",
+            "status": "SKIPPED",
+            "output": "Skipped by operator action.",
+            "returncode": 0
+        },
+        {
+            "step": "Verify CPU usage has decreased",
+            "command": "echo CPU usage: 11% - within normal range",
+            "status": "SUCCESS",
+            "output": "CPU usage: 11% - within normal range",
+            "returncode": 0
+        }
+    ]
+}

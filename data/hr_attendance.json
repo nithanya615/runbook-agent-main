@@ -1,0 +1,82 @@
+[
+    {
+        "employee_id": "EMP001",
+        "name": "Alice Smith",
+        "department": "Engineering",
+        "date": "2026-06-06",
+        "status": "Present",
+        "check_in_time": "08:55 AM",
+        "check_out_time": "05:00 PM",
+        "notes": "Completed deployment tasks ahead of schedule."
+    },
+    {
+        "employee_id": "EMP002",
+        "name": "Bob Johnson",
+        "department": "Product",
+        "date": "2026-06-06",
+        "status": "Late",
+        "check_in_time": "09:45 AM",
+        "check_out_time": "06:15 PM",
+        "notes": "Subway transit delay on Line 4."
+    },
+    {
+        "employee_id": "EMP003",
+        "name": "Charlie Brown",
+        "department": "HR",
+        "date": "2026-06-06",
+        "status": "Absent",
+        "check_in_time": "-",
+        "check_out_time": "-",
+        "notes": "Approved annual vacation day."
+    },
+    {
+        "employee_id": "EMP004",
+        "name": "Diana Prince",
+        "department": "Sales",
+        "date": "2026-06-06",
+        "status": "Present",
+        "check_in_time": "09:00 AM",
+        "check_out_time": "05:30 PM",
+        "notes": "Conducted 3 client demo presentations."
+    },
+    {
+        "employee_id": "EMP005",
+        "name": "Evan Wright",
+        "department": "Finance",
+        "date": "2026-06-06",
+        "status": "Present",
+        "check_in_time": "08:45 AM",
+        "check_out_time": "05:00 PM",
+        "notes": "Auditing monthly operations billing sheets."
+    },
+    {
+        "employee_id": "EMP006",
+        "name": "Fiona Gallagher",
+        "department": "Engineering",
+        "date": "2026-06-06",
+        "status": "Present",
+        "check_in_time": "09:05 AM",
+        "check_out_time": "05:15 PM",
+        "notes": "Fixed database connection pool exhaustion issues."
+    },
+    {
+        "employee_id": "EMP007",
+        "name": "George Costanza",
+        "department": "Product",
+        "date": "2026-06-06",
+        "status": "Absent",
+        "check_in_time": "-",
+        "check_out_time": "-",
+        "notes": "Out sick today."
+    },
+    {
+        "employee_id": "EMP008",
+        "name": "Helen Hunt",
+        "department": "Sales",
+        "date": "2026-06-06",
+        "status": "Late",
+        "check_in_time": "10:15 AM",
+        "check_out_time": "06:00 PM",
+        "notes": "Offsite customer meeting in the morning."
+    }
+]

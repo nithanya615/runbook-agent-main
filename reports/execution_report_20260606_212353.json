@@ -1,0 +1,154 @@
+{
+    "runbook": "Recovery Test Runbook",
+    "timestamp": "2026-06-06T21:23:53.693705",
+    "operator": {
+        "user": "developer",
+        "role": "developer"
+    },
+    "summary": {
+        "total": 1,
+        "success": 0,
+        "failed": 1,
+        "skipped": 0,
+        "blocked": 0
+    },
+    "results": [
+        {
+            "step": "Check disk space",
+            "command": "df -h",
+            "status": "FAILED",
+            "output": "error",
+            "returncode": 1
+        }
+    ],
+    "timeline": [
+        "12:00 Login",
+        "12:01 Execute Runbook"
+    ],
+    "audit_trail": [
+        {
+            "timestamp": "2026-06-06 19:44:25",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 20:11:20",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 20:12:12",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 20:26:43",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 20:33:14",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 20:39:14",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 20:59:52",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 21:00:43",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 21:01:51",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 21:09:42",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 21:13:36",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        },
+        {
+            "timestamp": "2026-06-06 21:23:53",
+            "user": "test_user",
+            "role": "developer",
+            "action": "TEST_ACTION",
+            "step": "Test Step",
+            "status": "SUCCESS",
+            "details": "Test details"
+        }
+    ],
+    "failures": [
+        {
+            "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+            "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+            "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+            "severity": "MEDIUM"
+        }
+    ],
+    "recommendations": [
+        {
+            "failure": "Check disk space (command: 'df -h') failed with return code 1.",
+            "root_cause": "Linux utility (df/free) is not available or executable on the target operating system (e.g. running on Windows).",
+            "recommendation": "Verify command availability. Install compatible tools (such as Git Bash, Cygwin, or WSL) or modify the runbook command map for local OS compatibility.",
+            "severity": "MEDIUM"
+        }
+    ]
+}
